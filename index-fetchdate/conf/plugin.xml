@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin id="index-fetchdate" name="Apache first fetch date filter" version="1.4" provider-name="nutch.org">
+
+   	<runtime>
+      	<library name="index-fetchdate.jar">
+         	<export name="*"/>
+      	</library>
+      	<library name="log4j.jar"/>
+   	</runtime>
+
+   	<requires>
+      	<import plugin="nutch-extensionpoints"/>
+   	</requires>
+
+   	<extension id="org.nsidc.nutch.indexer.fetchdate" name="Nutch fetch date Indexing Filter" point="org.apache.nutch.indexer.IndexingFilter">
+      	<implementation id="org.nsidc.nutch.indexer.fetchdate" class="org.nsidc.nutch.index.fetchdate.FetchDateIndexingFilter"/>
+   	</extension>
+
+</plugin>

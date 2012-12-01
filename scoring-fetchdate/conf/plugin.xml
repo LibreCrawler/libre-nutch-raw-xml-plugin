@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin id="scoring-fetchdate" name="Apache Nutch scoring fetch date filter" version="1.4" provider-name="nutch.org">
+
+   	<runtime>
+      	<library name="scoring-fetchdate.jar">
+         	<export name="*"/>
+      	</library>
+      	<library name="log4j.jar"/>
+   	</runtime>
+
+   	<requires>
+      	<import plugin="nutch-extensionpoints"/>
+   	</requires>
+
+   	<extension id="org.nsidc.nutch.scoring.fetchdate" name="Nutch solrxml scoring fetch date Filter" point="org.apache.nutch.scoring.ScoringFilter">
+      	<implementation id="org.nsidc.nutch.scoring.fetchdate`" class="org.nsidc.nutch.scoring.fetchdate.FetchDateScoringFilter"/>
+   	</extension>
+
+</plugin>
